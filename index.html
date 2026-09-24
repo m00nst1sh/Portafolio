@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portafolio de Jeshua Useche — Desarrollador Fullstack Junior. Proyectos, habilidades y contacto." />
+  <meta name="author" content="Jeshua Useche" />
+
+  <title>Jeshua Useche | Desarrollador Fullstack</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind custom config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream:       'var(--color-cream)',
+            pastelBlue:  'var(--color-pastel-blue)',
+            dark:        'var(--color-dark)',
+          },
+        },
+      },
+    }
+  </script>
+
+  <!-- Custom CSS (variables + overrides) -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body class="bg-cream text-dark">
+
+  <!-- ====================================================
+       NAVBAR — Sticky, top-0
+  ===================================================== -->
+  <header id="navbar" class="sticky top-0 z-50 bg-cream shadow-sm">
+    <nav
+      class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between"
+      aria-label="Navegación principal"
+    >
+      <!-- Logo / Nombre -->
+      <a href="#inicio" class="text-xl font-bold tracking-tight text-dark">
+        Jeshua Useche
+      </a>
+
+      <!-- Links desktop -->
+      <ul class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <li><a href="#inicio"   class="nav-link">Inicio</a></li>
+        <li><a href="#about"    class="nav-link">Sobre mí</a></li>
+        <li><a href="#skills"   class="nav-link">Habilidades</a></li>
+        <li><a href="#projects" class="nav-link">Proyectos</a></li>
+        <li><a href="#studies"  class="nav-link">Estudios</a></li>
+        <li><a href="#contact"  class="nav-link">Contacto</a></li>
+      </ul>
+
+      <!-- Hamburger (mobile placeholder — funcionalidad en Commit 2) -->
+      <button
+        id="hamburger-btn"
+        class="md:hidden flex flex-col gap-1.5 p-2"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        type="button"
+      >
+        <span class="hamburger-bar block w-6 h-0.5 bg-dark"></span>
+        <span class="hamburger-bar block w-6 h-0.5 bg-dark"></span>
+        <span class="hamburger-bar block w-6 h-0.5 bg-dark"></span>
+      </button>
+    </nav>
+
+    <!-- Menú mobile (placeholder — oculto hasta Commit 2) -->
+    <div
+      id="mobile-menu"
+      class="md:hidden hidden px-6 pb-4"
+      aria-hidden="true"
+    >
+      <ul class="flex flex-col gap-4 text-sm font-medium">
+        <li><a href="#inicio"   class="nav-link">Inicio</a></li>
+        <li><a href="#about"    class="nav-link">Sobre mí</a></li>
+        <li><a href="#skills"   class="nav-link">Habilidades</a></li>
+        <li><a href="#projects" class="nav-link">Proyectos</a></li>
+        <li><a href="#studies"  class="nav-link">Estudios</a></li>
+        <li><a href="#contact"  class="nav-link">Contacto</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ====================================================
+       MAIN — Contenido principal
+  ===================================================== -->
+  <main>
+
+    <!-- SECCIÓN 1: INICIO / HERO -->
+    <section id="inicio" class="min-h-screen flex items-center justify-center px-6">
+      <div class="text-center">
+        <!-- Placeholder: contenido real en Commit 2 -->
+        <p class="text-lg text-gray-400 italic">Hero aquí</p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2: SOBRE MÍ -->
+    <section id="about" class="min-h-screen flex items-center justify-center px-6">
+      <div class="text-center">
+        <!-- Placeholder: contenido real en Commit 2 -->
+        <p class="text-lg text-gray-400 italic">Sobre mí aquí</p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3: HABILIDADES -->
+    <section id="skills" class="min-h-screen flex items-center justify-center px-6">
+      <div class="text-center">
+        <!-- Placeholder: contenido real en Commit 2 -->
+        <p class="text-lg text-gray-400 italic">Habilidades aquí</p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 4: PROYECTOS -->
+    <section id="projects" class="min-h-screen flex items-center justify-center px-6">
+      <div class="text-center">
+        <!-- Placeholder: contenido real en Commit 2 -->
+        <p class="text-lg text-gray-400 italic">Proyectos aquí</p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 5: ESTUDIOS -->
+    <section id="studies" class="min-h-screen flex items-center justify-center px-6">
+      <div class="text-center">
+        <!-- Placeholder: contenido real en Commit 2 -->
+        <p class="text-lg text-gray-400 italic">Estudios aquí</p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 6: CONTACTO -->
+    <section id="contact" class="min-h-screen flex items-center justify-center px-6">
+      <div class="text-center">
+        <!-- Placeholder: contenido real en Commit 2 -->
+        <p class="text-lg text-gray-400 italic">Contacto aquí</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====================================================
+       FOOTER
+  ===================================================== -->
+  <footer class="bg-dark text-cream text-center py-6 px-6 text-sm">
+    <p>
+      &copy; <span id="footer-year"></span> Jeshua Useche — Desarrollador Fullstack Junior
+    </p>
+  </footer>
+
+  <!-- JavaScript (placeholder — lógica en Commit 2+) -->
+  <script src="js/script.js"></script>
+
+</body>
+
+</html>

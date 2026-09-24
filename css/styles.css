@@ -1,0 +1,57 @@
+/* =====================================================
+   styles.css — Variables CSS + Estilos base
+   Portafolio: Jeshua Useche
+   ===================================================== */
+
+/* ─── Custom Properties (Design Tokens) ──────────────── */
+:root {
+  --color-cream:       #F5F5F0;
+  --color-pastel-blue: #B3D9E8;
+  --color-dark:        #2C2C2C;
+}
+
+/* ─── Reset / Base ───────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-dark);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* ─── Navbar links ───────────────────────────────────── */
+.nav-link {
+  color: var(--color-dark);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--color-pastel-blue);
+}
+
+/* ─── Hamburger bars ─────────────────────────────────── */
+.hamburger-bar {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* ─── Secciones base ─────────────────────────────────── */
+section {
+  width: 100%;
+}
+
+/* ─── Footer ─────────────────────────────────────────── */
+footer {
+  background-color: var(--color-dark);
+  color: var(--color-cream);
+}
