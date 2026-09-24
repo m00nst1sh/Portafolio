@@ -128,7 +128,7 @@
     <!-- ── SECCIÓN 2: SOBRE MÍ ────────────────────────── -->
     <section id="about" class="section">
       <div class="container">
-        <div class="about-grid">
+        <div class="about-grid" data-animate="fade-up">
 
           <!-- ── Columna izquierda: Avatar ── -->
           <div class="about-avatar-col">
@@ -167,7 +167,7 @@
             </p>
 
             <!-- Mini-stats -->
-            <div class="about-stats" aria-label="Estadísticas profesionales">
+            <div class="about-stats" data-animate="fade-up" aria-label="Estadísticas profesionales">
 
               <div class="stat-item">
                 <span class="stat-number" data-target="2">2</span>
@@ -215,7 +215,7 @@
         <h2 class="section-title">Habilidades</h2>
         <p class="section-subtitle">Tecnologías y herramientas con las que trabajo.</p>
 
-        <div class="skills-grid">
+        <div class="skills-grid" data-animate="fade-up">
 
           <!-- Card placeholder × 6 -->
           <div class="skill-card">
@@ -267,7 +267,7 @@
         <div class="projects-grid">
 
           <!-- PROYECTO 1: S&M Network Company -->
-          <article class="project-card">
+          <article class="project-card" data-animate="fade-up" data-delay="0.1s">
             <div class="project-image-container">
               <div class="project-image-inner">
                 <div class="project-image-icon">
@@ -319,7 +319,7 @@
           </article>
 
           <!-- PROYECTO 2: Samsung Solve for Tomorrow -->
-          <article class="project-card">
+          <article class="project-card" data-animate="fade-up" data-delay="0.25s">
             <div class="project-image-container">
               <div class="project-image-inner">
                 <div class="project-image-icon">
@@ -371,7 +371,7 @@
           </article>
 
           <!-- PROYECTO 3: Documentación Nanoburbujas -->
-          <article class="project-card">
+          <article class="project-card" data-animate="fade-up" data-delay="0.4s">
             <div class="project-image-container">
               <div class="project-image-inner">
                 <div class="project-image-icon">
@@ -430,7 +430,7 @@
 
         <div class="timeline">
 
-          <div class="timeline-item">
+          <div class="timeline-item" data-animate="fade-up" data-delay="0.1s">
             <div class="timeline-dot" aria-hidden="true"></div>
             <div class="timeline-content">
               <p style="font-size:0.8rem;color:#999;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:4px">
@@ -443,7 +443,7 @@
             </div>
           </div>
 
-          <div class="timeline-item">
+          <div class="timeline-item" data-animate="fade-up" data-delay="0.2s">
             <div class="timeline-dot" aria-hidden="true"></div>
             <div class="timeline-content">
               <p style="font-size:0.8rem;color:#999;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:4px">
@@ -456,7 +456,7 @@
             </div>
           </div>
 
-          <div class="timeline-item">
+          <div class="timeline-item" data-animate="fade-up" data-delay="0.3s">
             <div class="timeline-dot" aria-hidden="true"></div>
             <div class="timeline-content">
               <p style="font-size:0.8rem;color:#999;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:4px">
@@ -476,18 +476,69 @@
     <!-- ── SECCIÓN 6: CONTACTO ────────────────────────── -->
     <section id="contact" class="section">
       <div class="container">
-        <div class="contact-card">
+        <div class="contact-card" data-animate="fade-up">
 
           <span class="hero-label" style="margin-bottom:20px;display:inline-block">
             Trabajemos juntos
           </span>
           <h2 style="margin-bottom:16px">¿Tienes un proyecto?</h2>
           <p style="color:#555;margin-bottom:8px">
-            Contacto aquí — formulario o links de redes sociales.
+            Escríbeme a través del formulario o encuéntrame en mis redes profesionales.
           </p>
           <p style="color:#999;font-size:0.9rem">
             jeshua@email.com (placeholder)
           </p>
+
+          <!-- Formulario de contacto básico interactivo -->
+          <form id="contact-form" class="contact-form" novalidate>
+            <div class="form-group">
+              <label for="contact-name" class="form-label">Nombre</label>
+              <input
+                type="text"
+                id="contact-name"
+                name="name"
+                class="form-input"
+                placeholder="Tu nombre"
+                required
+                autocomplete="name"
+              />
+              <span id="name-error" class="form-error">Por favor ingresa tu nombre (mínimo 2 caracteres).</span>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-email" class="form-label">Correo electrónico</label>
+              <input
+                type="email"
+                id="contact-email"
+                name="email"
+                class="form-input"
+                placeholder="tu@email.com"
+                required
+                autocomplete="email"
+              />
+              <span id="email-error" class="form-error">Por favor ingresa un correo electrónico válido.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message" class="form-label">Mensaje</label>
+              <textarea
+                id="contact-message"
+                name="message"
+                class="form-textarea"
+                rows="4"
+                placeholder="Cuéntame sobre tu proyecto o idea..."
+                required
+              ></textarea>
+              <span id="message-error" class="form-error">Por favor escribe un mensaje (mínimo 5 caracteres).</span>
+            </div>
+
+            <button type="submit" id="contact-submit" class="btn-submit">
+              <span class="submit-spinner" aria-hidden="true"></span>
+              <span class="submit-text">Enviar mensaje</span>
+            </button>
+
+            <div id="form-feedback" class="form-feedback" role="alert" aria-live="polite"></div>
+          </form>
 
           <div class="contact-links">
             <a href="#" class="contact-link-btn" aria-label="GitHub">
