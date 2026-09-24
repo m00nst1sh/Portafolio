@@ -127,28 +127,86 @@
 
     <!-- ── SECCIÓN 2: SOBRE MÍ ────────────────────────── -->
     <section id="about" class="section">
-      <div class="about-grid">
+      <div class="container">
+        <div class="about-grid">
 
-        <!-- Placeholder imagen -->
-        <div class="about-placeholder-img" aria-hidden="true">
-          [ Foto aquí ]
-        </div>
+          <!-- ── Columna izquierda: Avatar ── -->
+          <div class="about-avatar-col">
+            <div class="about-avatar" aria-label="Avatar de Jeshua Useche">
+              <span class="about-avatar-initials">JU</span>
+            </div>
+          </div>
 
-        <!-- Texto -->
-        <div>
-          <p class="hero-label" style="margin-bottom:20px">Sobre mí</p>
-          <h2 style="margin-bottom:20px">Hola, soy Jeshua</h2>
-          <p style="margin-bottom:16px; color:#555">
-            Sobre mí aquí — descripción personal, motivaciones
-            y qué lo hace único como desarrollador.
-          </p>
-          <p style="color:#555">
-            Tecnologías favoritas, forma de trabajar,
-            objetivos profesionales placeholder.
-          </p>
-        </div>
+          <!-- ── Columna derecha: Contenido ── -->
+          <div class="about-content-col">
 
-      </div>
+            <span class="hero-label">Sobre mí</span>
+            <h2 class="about-heading">Hola, soy Jeshua 👋</h2>
+
+            <p class="about-para">
+              Soy Jeshua Useche, desarrollador junior fullstack basado en
+              Santiago, Chile. Me especializo en crear experiencias web
+              modernas, rápidas y accesibles usando tecnologías como
+              React, Next.js y TypeScript.
+            </p>
+
+            <p class="about-para">
+              Co-fundé <strong>S&amp;M Network Company</strong>, una empresa
+              enfocada en desarrollar sitios web y catálogos digitales para
+              pequeños negocios chilenos. Además, fui seleccionado a nivel
+              nacional en el concurso <strong>Samsung Solve for Tomorrow</strong>
+              con un proyecto innovador de mapeo sensorial.
+            </p>
+
+            <p class="about-para">
+              Me apasiona resolver problemas complejos a través del código,
+              aprender tecnologías nuevas constantemente y crear soluciones
+              que generen impacto real. Mi objetivo es seguir creciendo como
+              profesional y contribuir a proyectos que mejoren la vida de
+              las personas.
+            </p>
+
+            <!-- Mini-stats -->
+            <div class="about-stats" aria-label="Estadísticas profesionales">
+
+              <div class="stat-item">
+                <span class="stat-number" data-target="2">2</span>
+                <span class="stat-label">Años de experiencia</span>
+              </div>
+
+              <div class="stat-item">
+                <span class="stat-number" data-target="5">5</span>
+                <span class="stat-label">Proyectos completados</span>
+              </div>
+
+              <div class="stat-item">
+                <span class="stat-number" data-target="3">3</span>
+                <span class="stat-label">Clientes satisfechos</span>
+              </div>
+
+            </div>
+
+            <!-- CTA -->
+            <div class="about-cta">
+              <a href="#contact" class="btn-about-primary">
+                Contactarme
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+              <a href="#" class="btn-about-outline" download aria-label="Descargar CV">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M8 2v8M5 7l3 3 3-3M3 13h10" stroke="currentColor" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Descargar CV
+              </a>
+            </div>
+
+          </div><!-- /about-content-col -->
+        </div><!-- /about-grid -->
+      </div><!-- /container -->
     </section>
 
     <!-- ── SECCIÓN 3: HABILIDADES ─────────────────────── -->

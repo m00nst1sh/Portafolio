@@ -1,6 +1,6 @@
 /* =====================================================
    styles.css — Diseño responsivo, paleta Apple
-   Portafolio: Jeshua Useche | Commit 2
+   Portafolio: Jeshua Useche | Commit 3
    ===================================================== */
 
 /* ─── 1. Custom Properties ───────────────────────────── */
@@ -482,27 +482,209 @@ p {
 }
 
 /* ─── 8. ABOUT ───────────────────────────────────────── */
-#about .about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-  max-width: var(--max-width);
-  margin: 0 auto;
+#about {
+  background-color: var(--color-cream);
 }
 
-.about-placeholder-img {
-  width: 100%;
-  aspect-ratio: 4/5;
-  background: linear-gradient(135deg, var(--color-blue-light), var(--color-pastel-blue));
+#about .about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 72px;
+  align-items: center;
+}
+
+/* ── Avatar column ── */
+.about-avatar-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-avatar {
+  width: 380px;
+  height: 380px;
+  max-width: 100%;
   border-radius: 24px;
+  background: linear-gradient(
+    145deg,
+    var(--color-pastel-blue) 0%,
+    var(--color-blue-light)  50%,
+    #9ECFDF                  100%
+  );
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow:
+    0 20px 60px rgba(122, 188, 212, 0.30),
+    0 4px  16px rgba(44, 44, 44, 0.08);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.about-avatar:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 32px 80px rgba(122, 188, 212, 0.38),
+    0 8px  24px rgba(44, 44, 44, 0.10);
+}
+
+/* Orbe decorativo dentro del avatar */
+.about-avatar::before {
+  content: '';
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+  top: -60px;
+  right: -60px;
+}
+
+.about-avatar-initials {
+  font-size: 5rem;
+  font-weight: 700;
+  color: var(--color-white);
+  letter-spacing: -0.04em;
+  text-shadow: 0 4px 20px rgba(44, 44, 44, 0.18);
+  position: relative;
+  z-index: 1;
+  user-select: none;
+}
+
+/* ── Content column ── */
+.about-content-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-heading {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: var(--color-dark);
+  letter-spacing: -0.03em;
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+.about-para {
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.about-para strong {
+  color: var(--color-dark);
+  font-weight: 600;
+}
+
+.about-para:last-of-type {
+  margin-bottom: 0;
+}
+
+/* ── Mini-stats ── */
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 40px;
+  margin-bottom: 36px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px 16px;
+  background-color: var(--color-white);
+  border: 1.5px solid var(--color-pastel-blue);
+  border-radius: 16px;
+  gap: 6px;
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+
+.stat-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(122, 188, 212, 0.25);
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
   color: var(--color-blue-dark);
-  font-size: 0.9rem;
+}
+
+.stat-label {
+  font-size: 0.8125rem;
   font-weight: 500;
-  letter-spacing: 0.05em;
+  color: #888;
+  line-height: 1.3;
+}
+
+/* ── About CTA buttons ── */
+.about-cta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-about-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--color-pastel-blue);
+  color: var(--color-dark);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  padding: 14px 28px;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition:
+    transform var(--transition),
+    background-color var(--transition),
+    color var(--transition),
+    box-shadow var(--transition);
+  letter-spacing: -0.01em;
+}
+
+.btn-about-primary:hover {
+  transform: scale(1.05);
+  background-color: var(--color-blue-dark);
+  color: var(--color-white);
+  box-shadow: 0 8px 28px rgba(122, 188, 212, 0.45);
+}
+
+.btn-about-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: transparent;
+  color: var(--color-dark);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  padding: 12px 26px;
+  border-radius: 12px;
+  border: 1.5px solid var(--color-border);
+  cursor: pointer;
+  transition:
+    transform var(--transition),
+    border-color var(--transition),
+    box-shadow var(--transition);
+  letter-spacing: -0.01em;
+}
+
+.btn-about-outline:hover {
+  transform: scale(1.05);
+  border-color: var(--color-pastel-blue);
+  box-shadow: 0 4px 16px rgba(179, 217, 232, 0.35);
 }
 
 /* ─── 9. SKILLS ──────────────────────────────────────── */
@@ -726,10 +908,24 @@ footer p {
     padding: calc(var(--nav-height) + 32px) var(--section-px-mobile) 72px;
   }
 
-  /* About grid → 1 columna */
+  /* About → 1 columna */
   #about .about-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 48px;
+  }
+
+  .about-avatar {
+    width: 260px;
+    height: 260px;
+    border-radius: 20px;
+  }
+
+  .about-avatar-initials {
+    font-size: 3.5rem;
+  }
+
+  .about-stats {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   /* Skills → 1 columna */
@@ -773,6 +969,22 @@ footer p {
   .contact-links {
     flex-direction: column;
     align-items: center;
+  }
+
+  /* About stats → 1 columna en mobile muy pequeño */
+  .about-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .about-cta {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-about-primary,
+  .btn-about-outline {
+    width: 100%;
+    justify-content: center;
   }
 }
 
