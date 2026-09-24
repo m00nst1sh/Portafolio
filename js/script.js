@@ -263,12 +263,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const contactForm = document.getElementById('contact-form');
   const nameInput = document.getElementById('contact-name');
   const emailInput = document.getElementById('contact-email');
+  const subjectInput = document.getElementById('contact-subject');
   const messageInput = document.getElementById('contact-message');
   const submitBtn = document.getElementById('contact-submit');
   const formFeedback = document.getElementById('form-feedback');
 
   const nameError = document.getElementById('name-error');
   const emailError = document.getElementById('email-error');
+  const subjectError = document.getElementById('subject-error');
   const messageError = document.getElementById('message-error');
 
   // Regex estándar para validación de email
@@ -304,6 +306,21 @@ document.addEventListener('DOMContentLoaded', () => {
     return isValid;
   }
 
+  function validateSubject() {
+    if (!subjectInput) return true;
+    const value = subjectInput.value.trim();
+    const isValid = value.length >= 2;
+
+    if (!isValid) {
+      subjectInput.classList.add('is-invalid');
+      if (subjectError) subjectError.classList.add('visible');
+    } else {
+      subjectInput.classList.remove('is-invalid');
+      if (subjectError) subjectError.classList.remove('visible');
+    }
+    return isValid;
+  }
+
   function validateMessage() {
     if (!messageInput) return true;
     const value = messageInput.value.trim();
@@ -334,6 +351,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  if (subjectInput) {
+    subjectInput.addEventListener('blur', validateSubject);
+    subjectInput.addEventListener('input', () => {
+      if (subjectInput.classList.contains('is-invalid')) validateSubject();
+    });
+  }
+
   if (messageInput) {
     messageInput.addEventListener('blur', validateMessage);
     messageInput.addEventListener('input', () => {
@@ -353,12 +377,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const isNameValid = validateName();
       const isEmailValid = validateEmail();
+      const isSubjectValid = validateSubject();
       const isMessageValid = validateMessage();
 
-      if (!isNameValid || !isEmailValid || !isMessageValid) {
+      if (!isNameValid || !isEmailValid || !isSubjectValid || !isMessageValid) {
         if (formFeedback) {
           formFeedback.className = 'form-feedback error';
-          formFeedback.textContent = 'Por favor corrige los errores antes de enviar.';
+          formFeedback.textContent = 'Por favor completa todos los campos requeridos correctamente.';
         }
         return;
       }
@@ -392,6 +417,7 @@ document.addEventListener('DOMContentLoaded', () => {
         contactForm.reset();
         nameInput.classList.remove('is-invalid');
         emailInput.classList.remove('is-invalid');
+        if (subjectInput) subjectInput.classList.remove('is-invalid');
         messageInput.classList.remove('is-invalid');
       }, 1200);
     });
